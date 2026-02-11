@@ -74,7 +74,7 @@ const Footer = () => {
    </div>
    <hr  className="border-top border-gray-300 my-5" />
    <p className="text-center text-gray-700 font-light">Copyright 2025 © <Link className="text-green font-normal" to="/">Nest Mart</Link>  All Right Reserved.</p>
-   <p className="text-base text-gray-700 text-center font-light">Developed by <Link className="text-green font-normal" to="https://www.linkedin.com/in/siddhi-singh07/">Siddhi Singh</Link></p>
+   <p className="text-base text-gray-700 text-center font-light">Developed by Vishvajeet Sharma</p>
     </div>
   );
 };
