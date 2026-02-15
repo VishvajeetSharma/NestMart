@@ -30,7 +30,7 @@ const Categories = () => {
     try {
       let res = await axios.get(`${base_url}/users/category`);
       setCategoryList(res.data.data);
-      console.log(res.data.data)
+
     } catch (error) {
       console.log(error);
     }
@@ -48,7 +48,7 @@ const Categories = () => {
     }))
     setCategoryList(category)
    }
-  }, [categoryList])
+  }, [])
 
   return (
     <div className="w-ful px-3 md:px-10 lg:px-28 bg-gray-50 py-4">

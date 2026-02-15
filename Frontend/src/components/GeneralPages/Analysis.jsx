@@ -20,7 +20,6 @@ const Analysis = () => {
     if (res) {
       setTopSelling(res.data.data);
     }
-    console.log(res)
   };
 
   const recentlyAddedFunction = async () => {

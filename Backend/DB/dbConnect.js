@@ -1,18 +1,18 @@
 import mongoose from 'mongoose';
-import { database_url } from '../src/constant.js';
+// import { database_url } from '../src/constant.js';
 
 const connectDb = async () => {
   try {
     //Local
-    // const connection = await mongoose.connect(
-    //   `mongodb://localhost:27017/${databaseName}`
-    // );
+    const connection = await mongoose.connect(process.env.DATABASE_URI);
     //PRODUCTION 
 
-    const connection = await mongoose.connect(process.env.DATABASE_URI);
-    console.log(database_url)
+    // const connection = await mongoose.connect(process.env.DATABASE_URI);
+    // console.log(database_url)
+
     if (connection) {
-      console.log('Database connected successfully');
+      const { host, port, name } = mongoose.connection;
+      console.log(  `Database connected successfully!, Host: ${host}, Port: ${port}, Database: ${name}`);
     } else {
       console.log('Database connection failed!');
     }
