@@ -46,4 +46,7 @@ app.use((err, req, res, next) => {
     );
 });
 
+// Serve React frontend
+app.use(express.static(path.join(__dirname, '../client/build')));
+
 export default app;
