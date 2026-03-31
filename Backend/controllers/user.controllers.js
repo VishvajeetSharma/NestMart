@@ -43,12 +43,12 @@ const login = async (req, res) => {
 
   let user = await User.findOne({ email });
   if (!user) {
-    throw new ErrorHandler(400, 'Email or password is incorrect');
+    throw new ErrorHandler(400, 'Invalid user or Email or password is incorrect');
   }
 
   let isCorrect = await bcrypt.compare(password, user.password);
   if (!isCorrect) {
-    throw new ErrorHandler(400, 'Email or password is incorrect');
+    throw new ErrorHandler(400, 'Password is incorrect');
   }
 
   let token = jwt.sign({ _id: user._id }, process.env.SECRET_KEY, {
